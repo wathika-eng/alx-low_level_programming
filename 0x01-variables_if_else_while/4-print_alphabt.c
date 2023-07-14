@@ -14,19 +14,16 @@ int main(void)
 
 	while (a <= 'z')
 	{
-		a += 1;
-
 		switch (a)
 		{
 		case 'e':
-			continue;
+			break;
 		case 'q':
-			continue;
-		case '{':
-			continue;
+			break;
 		default:
 			putchar(a);
 		}
+		a += 1;
 	}
 	putchar('\n');
 	return (0);
