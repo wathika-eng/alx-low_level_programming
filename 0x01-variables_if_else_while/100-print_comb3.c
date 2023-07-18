@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - start of the program
- * Description - print a combination of numbers
- * Return : Always 0 (success)
+ * main - Start of the program
+ * description - A combination of numbers
+ * Return: Always 0 (success)
 */
 
 int main(void)
@@ -19,12 +19,12 @@ int main(void)
 			if (i == 8 && j == 9)
 			{
 				putchar('\n');
-			}else
+			} else
 			{
 				putchar(',');
 				putchar(' ');
 			}
 		}
 	}
-			return (0);
+	return (0);
 }
