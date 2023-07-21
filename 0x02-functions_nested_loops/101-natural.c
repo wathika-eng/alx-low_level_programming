@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	int suma, sumb, sumc;
+	unsigned long int suma, sumb, sumc;
 	int a;
 
 	for (a = 0; a < 1024; ++a)
@@ -22,6 +22,6 @@ int main(void)
 		}
 	}
 	sumc = suma + sumb;
-	printf("%d\n", sumc);
+	printf("%lu\n", sumc);
 	return (0);
 }
