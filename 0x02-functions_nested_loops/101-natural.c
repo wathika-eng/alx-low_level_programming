@@ -8,9 +8,12 @@
 
 int main(void)
 {
-	unsigned long int suma, sumb, sumc;
+	long int suma, sumb, sumc;
 	int a;
 
+	suma = 0;
+	sumb = 0;
+	sumc = 0;
 	for (a = 0; a < 1024; ++a)
 	{
 		if ((a % 3) == 0)
