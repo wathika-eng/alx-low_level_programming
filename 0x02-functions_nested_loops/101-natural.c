@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+/**
+  * main - start
+  * description - mulriples of 3 and 5
+  * Return: 0
+ */
+
+int main(void)
+{
+	int suma, sumb, sumc;
+	int a;
+
+	for (a = 0; a < 1024; ++a)
+	{
+		if ((a % 3) == 0)
+		{
+			suma = suma + a;
+		} else if ((a % 5) == 0)
+		{
+			sumb = sumb + a;
+		}
+	}
+	sumc = suma + sumb;
+	printf("%d\n", sumc);
+	return (0);
+}
