@@ -16,11 +16,15 @@ void print_square(int size)
 		for (b = 0; b < 1; b++)
 		{
 			a = '#';
-			for (hash = 0; hash < 1; hash++)
+			for (hash = 0; hash < size; hash++)
 			{
 				_putchar(a);
 			}
+			_putchar('\n');
 		}
 	}
-	_putchar('\n');
+	if (size <= 0)
+	{
+		_putchar('\n');
+	}
 }
