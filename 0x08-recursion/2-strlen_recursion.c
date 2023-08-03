@@ -3,7 +3,7 @@
 /**
  * _strlen_recursion - start
  * @s: length to measure
- * Return: Null
+ * Return: length
 */
 
 int _strlen_recursion(char *s)
