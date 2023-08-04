@@ -2,12 +2,15 @@
 #include "main.h"
 
 /**
-  * _putchar - start
-  * @c: char to print
-  * Return: 1 else -1
+  * main - start
+  * @argc: no of args
+  * @argv: array
+  * Return: 0
  */
 
-int _putchar(char c)
+int main(int argc, char *argv[])
 {
-	return (write(1, &c, 1));
+	(void) argv;
+	printf("%d\n", argc - 1);
+	return (0);
 }
