@@ -42,11 +42,11 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	}
 	if (new_size > old_size)
 	{
-		for (c = 0; c < b; c++)
+		for (c = 0; c < old_size; c++)
 		{
-			a[c] = b[a];
+			a[c] = b[c];
 		}
 	}
-	free(a);
+	free(ptr);
 	return (a);
 }
