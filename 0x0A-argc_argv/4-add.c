@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
 			c += str_to_int;
 		} else
 		{
-			printf("Error is \n:");
+			printf("Error is: \n");
 			return (1);
 		}
 		b++;
