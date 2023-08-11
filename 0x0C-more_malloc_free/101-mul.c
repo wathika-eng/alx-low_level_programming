@@ -75,15 +75,10 @@ int main(int argc, char *argv[])
 	g = e + f + 1;
 	sum = malloc(sizeof(int) * g);
 	if (!sum)
-	{
 		return (1);
-	}
 	for (h = 0; h < e + f; h++)
-	{
 		sum[h] = 0;
-	}
 	for (e = e - 1; e >= 0; e--)
-	{
 		k = c[e] - '0';
 		j = 0;
 		for (f = _strlen(d) - 1; f >= 0; f--)
@@ -97,11 +92,8 @@ int main(int argc, char *argv[])
 		{
 			sum[e + f + 1] += j;
 		}
-	}
 	if (!m)
-	{
 		printf("0");
-	}
 	free(sum);
 	printf("\n");
 	return (0);
