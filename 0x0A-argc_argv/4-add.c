@@ -11,7 +11,7 @@
 
 int check_num(char *str)
 {
-	int a = 0;
+	unsigned int a = 0;
 
 	while (a < strlen(str))
 	{
