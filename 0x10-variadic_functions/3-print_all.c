@@ -41,7 +41,7 @@ void print_all(const char * const format, ...)
 					a++;
 					continue;
 			}
-			str2 = ",";
+			str2 = ", ";
 			a++;
 		}
 	}
