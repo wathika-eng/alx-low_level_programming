@@ -9,6 +9,7 @@
 int main(void)
 {
 	char *s;
+
 	printf("%s\n"__FILE__);
 	return (0);
 }
