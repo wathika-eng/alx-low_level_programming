@@ -27,9 +27,9 @@ int _strlen(char *s)
 
 char *_strcopy(char *dst, char *sc)
 {
-	int b, c = 0;
-
-	b = c;
+	int b, c;
+	
+	b = 0;
 	while (sc[b] != '\0')
 	{
 		b++;
