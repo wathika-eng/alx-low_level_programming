@@ -6,7 +6,7 @@
   * main - start
   * @argc: arguments to pass
   * @argv: params
-  * Return: 0 success
+  * Return: 0 success else 1
 */
 
 int main(int argc, char *argv[])
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 		while (a >= coins[b])
 		{
 			sum++;
-			a -= coins[a];
+			a -= coins[b];
 		}
 	}
 	printf("%d\n", sum);

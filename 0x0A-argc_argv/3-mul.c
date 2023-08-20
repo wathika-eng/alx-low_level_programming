@@ -9,9 +9,14 @@
 
 int _atoi(char *s)
 {
-	int a, b, c, e, f = 0;
-	int d = 0;
+	int a, b, c, d, e, f;
 
+	a = 0;
+	b = a;
+	c = a;
+	d = a;
+	e = a;
+	f = a;
 	while (s[d] != '\0')
 	{
 		d++;
