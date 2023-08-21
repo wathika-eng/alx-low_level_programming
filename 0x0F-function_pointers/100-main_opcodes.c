@@ -29,10 +29,10 @@ int main(int argc, char *argv[])
 	{
 		if (b == a - 1)
 		{
-			printf("%0x ", r[b]);
+			printf("%02hhx ", r[b]);
 			break;
 		}
-		printf("%0x ", r[b]);
+		printf("%02hhx ", r[b]);
 	}
 	printf("\n");
 	return (0);
