@@ -11,7 +11,7 @@
 int main(int argc, char *argv[])
 {
 	int a, b;
-	char *r;
+	unsigned char *r;
 
 	if (argc != 2)
 	{
@@ -24,15 +24,16 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(2);
 	}
-	r = (char *)main;
+	r = (unsigned char *)main;
 	for (b = 0; b < a; b++)
 	{
 		if (b == a - 1)
 		{
-			printf("%02hhx\n", r[b]);
+			printf("%0x ", r[b]);
 			break;
 		}
-		printf("%02hhx\n", r[b]);
+		printf("%0x ", r[b]);
 	}
+	printf("\n");
 	return (0);
 }
