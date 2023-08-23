@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "3-calc.h"
 
-/** 
+/**
   * get_op_func - start
   * @s: argument
   * Return: ptr
