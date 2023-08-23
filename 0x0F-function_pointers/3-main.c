@@ -12,19 +12,22 @@
 
 int main(int __attribute((__unused__)) argc, char *argv[])
 {
-	int a, b;
+	int i, j;
 	char *op;
 
+	i = atoi(argv[1]);
+	j = atoi(argv[3]);
+	op = argv[2];
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(1);
 	}
-	if ((*op == '/' && b == 0) || (*op == '%' && b == 0))
+	if ((*op == '/' && j == 0) || (*op == '%' && j == 0))
 	{
 		printf("Error\n");
 		exit(2);
 	}
-	printf("%d\n", get_op_func(op)(a, b));
+	printf("%d\n", get_op_func(op)(i, j));
 	return (0);
 }
