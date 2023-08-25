@@ -3,39 +3,39 @@
 
 /**
   * argstostr - start
-  * @i: int
-  * @arv: arr
+  * @ac: int
+  * @av: arr
   * Return: ptr
 */
 
-char *argstostr(int i, char **arv)
+char *argstostr(int ac, char **av)
 {
 	int a, b, c, d;
 	char *s;
 
-	if (i == 0)
+	if (ac == 0)
 	{
-		if (arv == NULL)
+		if (av == NULL)
 		{
 			return (NULL);
 		}
 	}
-	for (a = 0; a < i; a++)
+	for (a = 0; a < ac; a++)
 	{
-		for (b = 0; arv[a][b]; b++)
+		for (b = 0; av[a][b]; b++)
 		{
 			d++;
 		}
 	}
-	d += i;
+	d += ac;
 	s = malloc(sizeof(char) * d + 1);
 	if (s == NULL)
 		return (NULL);
-	for (a = 0; a< i; a++)
+	for (a = 0; a < ac; a++)
 	{
-		for (b = 0; arv[a][b]; b++)
+		for (b = 0; av[a][b]; b++)
 		{
-			s[c] = arv[a][b];
+			s[c] = av[a][b];
 			c++;
 		}
 		if (s[c] == '\0')
@@ -43,4 +43,3 @@ char *argstostr(int i, char **arv)
 	}
 	return (s);
 }
-
