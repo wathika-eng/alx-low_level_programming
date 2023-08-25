@@ -16,6 +16,4 @@ xor rdi, rdi
 syscall          
 
 section .data
-format db "%s",0 
-
-section .bss
+format db "%s",0
