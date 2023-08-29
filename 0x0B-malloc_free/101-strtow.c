@@ -1,24 +1,22 @@
-#include <stdio.h>
 #include "main.h"
 #include <stdlib.h>
 
 /**
-  * coutw - start
-  * @s: string to check
-  * Return: int
+  * cwords - start
+  * @s: string
+  * Return: int words
 */
 
-int coutw(char *s)
+int cwords(char *s)
 {
 	int a, b, c;
 
-	a = 0;
-	b = a;
-	c = a;
 	for (b = 0; s[b] != '\0'; b++)
 	{
 		if (s[b] == ' ')
-			a = 0;
+		{
+			a = 1;
+		}
 		if (a == 0)
 		{
 			a = 1;
@@ -27,50 +25,54 @@ int coutw(char *s)
 	}
 	return (c);
 }
+
 /**
-  * **strow - splitter
+  * strtow - splitter
   * @str: string
-  * Return: mem address
+  * Return: ptr
 */
 
-char **strow(char *str)
+char **strtow(char *str)
 {
-	char **s, *t;
-	int u, uu, v, w, x, a, b;
+	int begin, mwisho, d, e, f, g, maneno;
+	char **x, *y;
 
-	while (*(str + uu))
+	e = 0;
+	f = e;
+	g = e;
+	while (*(str + f))
 	{
-		uu++;
+		f++;
 	}
-	w = coutw(str);
-	if (w == 0)
+	maneno = cwords(str);
+	if (maneno == 0)
 		return (NULL);
-	s = malloc(sizeof(char *) * (w + 1));
-	if (s == NULL)
+	x = (char **) malloc((maneno + 1) * sizeof(char *));
+	if (x == NULL)
 		return (NULL);
-	for (u = 0; u < uu; u++)
+	for (d = 0; d <= f; d++)
 	{
-		if (str[u] == ' ' || str[u] == '\0')
+		if (str[d] == ' ' || str[d] == '\0')
 		{
-			if (x)
+			if (g)
 			{
-				b = u;
-				t = malloc(sizeof(char *) * (x + 1));
-				if (t == NULL)
-					return (NULL);
-				while (a < b)
+				mwisho = d;
+				y = (char *) malloc(sizeof(char) * (g + 1));
+				if (y == NULL)
+					return (NULL);				
+				while (begin < mwisho)
 				{
-					*t++ = str[a++];
+					*y++ = str[begin++];
 				}
-				*t = '\0';
-				s[v] = t - x;
-				v++;
-				x = 0;
+				*y = '\0';
+				x[e] = y - g;
+				e++;
+				g = 0;
 			}
 		}
-		if (x++ == 0)
-			a = u;
+		if (g++ == 0)
+			begin = d;
 	}
-	s[v] = NULL;
-	return (s);
+	x[e] = NULL;
+	return (x);
 }
