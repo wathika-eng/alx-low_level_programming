@@ -37,9 +37,11 @@ char **strtow(char *str)
 	int begin, mwisho, d, e, f, g, maneno;
 	char **x, *y;
 
+	/**
 	e = 0;
 	f = e;
 	g = e;
+	*/
 	while (*(str + f))
 	{
 		f++;
@@ -47,7 +49,7 @@ char **strtow(char *str)
 	maneno = cwords(str);
 	if (maneno == 0)
 		return (NULL);
-	x = (char **) malloc((maneno + 1) * sizeof(char *));
+	x = (char **) malloc(sizeof(char *) * (maneno + 1));
 	if (x == NULL)
 		return (NULL);
 	for (d = 0; d <= f; d++)
