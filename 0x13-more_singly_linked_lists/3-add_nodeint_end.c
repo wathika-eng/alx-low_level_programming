@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "lists.h"
 
 /**
@@ -9,8 +8,8 @@
 */
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
-	listint_t *b = *head;
 	listint_t *a;
+	listint_t *b = *head;
 
 	a = malloc(sizeof(listint_t));
 	if (!a)
@@ -23,10 +22,13 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 	{
 		*head = a;
 		return (a);
-	}
-	while (b->next)
+	} else if (*head != NULL)
 	{
-		b = b->next;
+		while (b->next)
+		{
+			b = b->next;
+		}
+		b->next = a;
 	}
 	return (a);
 }
