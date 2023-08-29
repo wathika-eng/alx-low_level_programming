@@ -37,11 +37,9 @@ char **strtow(char *str)
 	int begin, mwisho, d, e, f, g, maneno;
 	char **x, *y;
 
-	/**
 	e = 0;
 	f = e;
 	g = e;
-	*/
 	while (*(str + f))
 	{
 		f++;
@@ -61,11 +59,9 @@ char **strtow(char *str)
 				mwisho = d;
 				y = (char *) malloc(sizeof(char) * (g + 1));
 				if (y == NULL)
-					return (NULL);				
+					return (NULL);
 				while (begin < mwisho)
-				{
 					*y++ = str[begin++];
-				}
 				*y = '\0';
 				x[e] = y - g;
 				e++;
