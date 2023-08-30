@@ -1,7 +1,8 @@
 #include <stdlib.h>
 #include "main.h"
 #include <stdio.h>
-#define error "Error"
+
+#define ERR_MSG "Error"
 
 /**
   * is_digit - start
@@ -11,8 +12,9 @@
 
 int is_digit(char *s)
 {
-	int a = 0;
+	int a;
 
+	a = 0;
 	while (s[a])
 	{
 		if (s[a] < '0' || s[a] > '9')
@@ -32,8 +34,9 @@ int is_digit(char *s)
 
 int _strlen(char *s)
 {
-	int b = 0;
+	int b;
 
+	b = 0;
 	while (s[b] != '\0')
 	{
 		b++;
@@ -48,7 +51,7 @@ int _strlen(char *s)
 
 void errors(void)
 {
-	printf("Error is \n");
+	printf("Error\n");
 	exit(98);
 }
 
@@ -61,44 +64,43 @@ void errors(void)
 
 int main(int argc, char *argv[])
 {
-	char *c, *d;
-	int e, f, g, h, j, k, l, m = 0;
-	int *sum;
+	char *x, *y;
+	int a, b, c, d, beba, mat, matb, *get, aa;
 
-	c = argv[1], d = argv[2];
-	if (argc != 3 || !is_digit(c) || !is_digit(d))
-	{
+	aa = 0;
+	x = argv[1], y = argv[2];
+	if (argc != 3 || !is_digit(x) || !is_digit(y))
 		errors();
-	}
-	e = _strlen(c);
-	f = _strlen(d);
-	g = e + f + 1;
-	sum = malloc(sizeof(int) * g);
-	if (!sum)
+	a = _strlen(x);
+	b = _strlen(y);
+	c = a + b + 1;
+	get = malloc(sizeof(int) * c);
+	if (!get)
 		return (1);
-	for (h = 0; h < e + f; h++)
+	for (d = 0; d <= a + b; d++)
 	{
-		sum[h] = 0;
+		mat = x[a] - '0';
+		beba = 0;
+		for (b = _strlen(y) - 1; b >= 0; b--)
+		{
+			matb = y[b] - '0';
+			beba += get[a + b + c] + (mat * matb);
+			get[a + b + 1] = beba % 10;
+			beba /= 10;
+		}
+		if (beba > 0)
+			get[a + b + 1] += beba;
 	}
-	for (e = e - 1; e >= 0; e--)
+	for (d = 0; d < c - 1; d++)
 	{
-		k = c[e] - '0';
-		j = 0;
-		for (f = _strlen(d) - 1; f >= 0; f--)
-		{
-			l = d[f] - '0';
-			j += sum[e + f + 1] + (k + l);
-			sum[e + f + 1] = j % 10;
-			j /= 10;
-		}
-		if (j > 0)
-		{
-			sum[e + f + 1] += j;
-		}
+		if (get[d])
+			aa = 1;
+		if (aa)
+			_putchar(get[d] + '0');
 	}
-	if (!m)
-		printf("0");
-	free(sum);
-	printf("\n");
+	if (!aa)
+		_putchar('0');
+	_putchar('\n');
+	free(get);
 	return (0);
 }
