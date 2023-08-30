@@ -33,10 +33,10 @@ int check_num(char *str)
 
 int main(int argc, char *argv[])
 {
-	int b, str_to_int;
-	int c = 0;
+	int b, str_to_int, c;
 
 	b = 1;
+	c = 0;
 	while (b < argc)
 	{
 		if (check_num(argv[b]))
@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
 			c += str_to_int;
 		} else
 		{
-			printf("Error is: \n");
+			printf("Error\n");
 			return (1);
 		}
 		b++;
