@@ -43,7 +43,7 @@ int _strlen_recursion(char *s)
 
 int check_pali(char *s, int a, int len)
 {
-	if ((*s + a) != (*s + len - 1))
+	if (*(s + a) != *(s + len - 1))
 	{
 		return (0);
 	}
@@ -53,4 +53,3 @@ int check_pali(char *s, int a, int len)
 	}
 	return (check_pali(s, a + 1, len - 1));
 }
-
