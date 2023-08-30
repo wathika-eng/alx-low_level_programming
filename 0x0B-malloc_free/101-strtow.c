@@ -11,6 +11,9 @@ int cwords(char *s)
 {
 	int a, b, c;
 
+	a = 0;
+	b = 0;
+	c = 0;
 	for (b = 0; s[b] != '\0'; b++)
 	{
 		if (s[b] == ' ')
@@ -38,8 +41,8 @@ char **strtow(char *str)
 	char **x, *y;
 
 	e = 0;
-	f = e;
-	g = e;
+	f = 0;
+	g = 0;
 	while (*(str + f))
 	{
 		f++;
