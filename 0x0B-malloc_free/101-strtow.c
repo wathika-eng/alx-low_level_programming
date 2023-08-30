@@ -12,13 +12,12 @@ int cwords(char *s)
 	int a, b, c;
 
 	a = 0;
-	b = 0;
 	c = 0;
 	for (b = 0; s[b] != '\0'; b++)
 	{
 		if (s[b] == ' ')
 		{
-			a = 1;
+			a = 0;
 		}
 		if (a == 0)
 		{
@@ -70,8 +69,7 @@ char **strtow(char *str)
 				e++;
 				g = 0;
 			}
-		}
-		if (g++ == 0)
+		} else if (g++ == 0)
 			begin = d;
 	}
 	x[e] = NULL;
