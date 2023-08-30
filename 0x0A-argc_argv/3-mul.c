@@ -12,11 +12,11 @@ int _atoi(char *s)
 	int a, b, c, d, e, f;
 
 	a = 0;
-	b = a;
-	c = a;
-	d = a;
-	e = a;
-	f = a;
+	b = 0;
+	c = 0;
+	d = 0;
+	e = 0;
+	f = 0;
 	while (s[d] != '\0')
 	{
 		d++;
@@ -36,7 +36,7 @@ int _atoi(char *s)
 			}
 			c = c * 10 + f;
 			e = 1;
-			if (s[a + 1] < '0' || s[a + 1] > '0')
+			if (s[a + 1] < '0' || s[a + 1] > '9')
 			{
 				break;
 			}
