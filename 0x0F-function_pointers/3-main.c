@@ -21,12 +21,17 @@ int main(int __attribute((__unused__)) argc, char *argv[])
 	if (argc != 4)
 	{
 		printf("Error\n");
-		exit(1);
+		exit(98);
+	}
+	if (op[1] != '\0' || get_op_func(op) == NULL)
+	{
+		printf("Error\n");
+		exit(99);
 	}
 	if ((*op == '/' && j == 0) || (*op == '%' && j == 0))
 	{
 		printf("Error\n");
-		exit(2);
+		exit(100);
 	}
 	printf("%d\n", get_op_func(op)(i, j));
 	return (0);

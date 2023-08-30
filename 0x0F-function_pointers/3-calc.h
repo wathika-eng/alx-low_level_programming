@@ -2,15 +2,15 @@
 #define CALC_H
 
 /**
- * struct op - Struct op
- * @op: The operator
- * @f: The function associated
+ * struct op - start
+ * @op: op
+ * @f: fn
  */
 
 typedef struct op
 {
 	char *op;
-	int (*f)(int a, int b);
+	int (*f)(int i, int j);
 } op_t;
 
 int op_add(int i, int j);
