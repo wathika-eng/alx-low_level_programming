@@ -1,13 +1,19 @@
 #include "dog.h"
 #include <stdio.h>
 #include <stdlib.h>
+
 /**
   * print_dog - start
   * @d: dog
   * Return: nothing
 */
+
 void print_dog(struct dog *d)
 {
+	if (d == NULL)
+	{
+		return;
+	}
 	if (d->name == NULL)
 	{
 		d->name = "(nil)";

@@ -11,7 +11,7 @@ int _strlen(char *s)
 {
 	int a = 0;
 
-	while (s[1] != '\0')
+	while (s[a] != '\0')
 	{
 		a++;
 	}
@@ -80,5 +80,3 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog->age = age;
 	return (dog);
 }
-
-
