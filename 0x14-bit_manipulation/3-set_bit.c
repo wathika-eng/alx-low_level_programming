@@ -1,4 +1,6 @@
 #include "main.h"
+#define err -1
+#define succ 1
 
 /**
   * set_bit - start
@@ -10,8 +12,8 @@ int set_bit(unsigned long int *n, unsigned int index)
 {
 	if (index > 63)
 	{
-		return (-1);
+		return (err);
 	}
 	*n = ((1UL << index) | *n);
-	return (1);
+	return (succ);
 }

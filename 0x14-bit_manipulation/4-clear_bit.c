@@ -1,5 +1,6 @@
- #include "main.h"
+#include "main.h"
 #define a 1
+
 /**
   * clear_bit - start
   * @n: %lu
