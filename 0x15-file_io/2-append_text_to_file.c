@@ -1,30 +1,37 @@
 #include "main.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 /**
-  *  create_file - start
-  * @filename: file
-  * @text_content: string
-  * Return: 1 success else -1
-*/
-int create_file(const char *filename, char *text_content)
+ * append_text_to_file - start
+ * @filename: ptr to name of file
+ * @text_content: str to write to file
+ * Return: 1 Otherwise - 1
+ */
+int append_text_to_file(const char *filename, char *text_content)
 {
-	FILE *filee;
-	int ur = 0;
+	int oopen, wwrite, size;
 
-	if (filename == NULL)
-		return (-1);
+	oopen = 0;
+	wwrite = oopen;
+	size = wwrite;
+	oopen = open(filename, O_WRONLY | O_APPEND);
 	if (text_content != NULL)
 	{
-		while (text_content[ur])
+		for ( ; text_content[size];)
 		{
-			ur++;
+			size++;
 		}
 	}
-	filee = fopen(filename, "a+");
-	if (filee == NULL)
+	else if (filename == NULL)
+	{
 		return (-1);
-	fclose(filee);
-	return (1);
+	}
+	wwrite = write(oopen, text_conent, size);
+	if (wwrite == -1 || oopen == -1)
+	{
+		return (-1);
+	} else
+	{
+		close(oopen);
+		return (1);
+	}
 }

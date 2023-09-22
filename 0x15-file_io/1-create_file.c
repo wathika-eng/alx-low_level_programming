@@ -11,19 +11,32 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	FILE *ffile;
+	int ffile, wwrite, size;
 
-	ffile = fopen("filename", "r");
+	ffile = 0;
+	wwrite = ffile;
+	size = wwrite;
+	ffile = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0700);
 	if (filename == NULL)
 	{
 		return (-1);
 	}
-	if (text_content == NULL)
+	if (text_content != NULL)
 	{
-		ffile = fopen("filename", "w+");
-		fputs(text_content, ffile);
+		for (; text_content[size];)
+		{
+			size++;
+		}
 	}
+	wwrite = write(ffile, text_content, size);
+	if (wwrite == -1)
+	{
+		if (ffile == -1)
+		{
+			return (-1);
+		}
+	}
+	close(ffile);
 	/* fclose(ffile); */
 	return (1);
-	/* free(ffile); */
 }

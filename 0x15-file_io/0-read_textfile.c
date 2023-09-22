@@ -11,22 +11,22 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	FILE *ffile;
-	size_t *write, *read;
+	char *file; /*pointer */
+	size_t wwrite, rread, ffile;
 
-	ffile = fopen("filename", "w");
-	if (filename == NULL || ffile == NULL)
+	ffile = open(filename, O_RDONLY);
+	if (filename == NULL || ffile == -1)
 	{
 		return (0);
 	} /** else *//* { *//*fputs(letters, ffile);*/
-	read = malloc(sizeof(char) * letters);
-	if (read > 0)
-	{
-		write = fputs(letters);
-	}
-	if (read != write)
+	file = malloc(sizeof(char) * letters);
+	rread = read(ffile, file, letters);
+	wwrite = write(STDOUT_FILENO, file, rread);
+	if (rread != wwrite)
 	{
 		return (0);
 	}
+	free(file); /* freeing malloc */
+	close(ffile);
 	return (letters);
 }
