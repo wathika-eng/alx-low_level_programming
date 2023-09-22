@@ -12,10 +12,11 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char *file; /*pointer */
-	size_t wwrite, rread, ffile;
+	size_t wwrite, rread, ffile, comp;
 
+	comp = -1;
 	ffile = open(filename, O_RDONLY);
-	if (filename == NULL || ffile == -1)
+	if (filename == NULL || ffile == comp)
 	{
 		return (0);
 	} /** else *//* { *//*fputs(letters, ffile);*/
