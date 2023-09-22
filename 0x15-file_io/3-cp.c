@@ -32,11 +32,11 @@ char *buff(char *ffile)
 void closes(int fd)
 {
 	int a;
-	
+
 	a = close(fd);
 	if (a == -1)
 	{
-		dprintf(STDERR_FILENO,"Error: Can't close fd %d\n", fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
 }
@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
 	y = read(w, pro, 1024);
 	x = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0064);
 	if (x == -1)
-	{    
+	{
 		dprintf(STDERR_FILENO, "Error: Can't read from the file\n");
 		return (98);
 	}
