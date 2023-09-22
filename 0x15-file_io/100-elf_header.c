@@ -13,7 +13,7 @@
 void print_elf_header_info(Elf64_Ehdr *header)
 {
 	int type_index;
-	char *elf_type[900];
+	/* char *elf_type[900]; */
 
 	/* elf_type = malloc(sizeof(elf_type)); */
 
@@ -46,8 +46,7 @@ void print_elf_header_info(Elf64_Ehdr *header)
 	printf("Version: %d (current)\n", header->e_ident[EI_VERSION]);
 	printf("OS/ABI:  %d\n", header->e_ident[EI_OSABI]);
 	printf("ABI Version: %d\n", header->e_ident[EI_ABIVERSION]);
-	elf_type[900] = 
-	{
+	void initialize_elf_type(char **elf_type) = {
 		[ET_NONE] = "NONE (No file type)",
 		[ET_EXEC] = "EXEC (Executable file)",
 		[ET_DYN] = "DYN (Shared object file)",
