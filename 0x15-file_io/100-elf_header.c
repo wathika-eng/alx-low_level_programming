@@ -13,8 +13,13 @@
 void print_elf_header_info(Elf64_Ehdr *header)
 {
 	int type_index;
-	/* char *elf_type[900]; */
+	char **elf_type;
 
+	elf_type = malloc(900 * sizeof(char *));
+	elf_type[ET_NONE] = "NONE (No file type)";
+	elf_type[ET_EXEC] = "EXEC (Executable file)";
+	elf_type[ET_DYN] = "DYN (Shared object file)";
+	elf_type[ET_REL] = "REL (Relocatable file)";
 	/* elf_type = malloc(sizeof(elf_type)); */
 
 	printf("Magic:   %02x %02x %02x %02x\n",
@@ -46,18 +51,13 @@ void print_elf_header_info(Elf64_Ehdr *header)
 	printf("Version: %d (current)\n", header->e_ident[EI_VERSION]);
 	printf("OS/ABI:  %d\n", header->e_ident[EI_OSABI]);
 	printf("ABI Version: %d\n", header->e_ident[EI_ABIVERSION]);
-	void initialize_elf_type(char **elf_type) = {
-		elf_type[ET_NONE] = "NONE (No file type)",
-		elf_type[ET_EXEC] = "EXEC (Executable file)",
-		elf_type[ET_DYN] = "DYN (Shared object file)",
-		elf_type[ET_REL] = "REL (Relocatable file)",
-	};
 	type_index = header->e_type;
 	if (type_index >= 0 && type_index <= 3)
 		printf("Type:\t%s\n", elf_type[type_index]);
 	else
 		printf("Type:\tUnknown\n");
 	printf("Entry point address: %lx\n", (unsigned long)header->e_entry);
+	free(elf_type);
 }
 
 /**
