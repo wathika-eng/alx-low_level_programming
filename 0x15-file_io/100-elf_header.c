@@ -47,11 +47,10 @@ void print_elf_header_info(Elf64_Ehdr *header)
 	printf("OS/ABI:  %d\n", header->e_ident[EI_OSABI]);
 	printf("ABI Version: %d\n", header->e_ident[EI_ABIVERSION]);
 	void initialize_elf_type(char **elf_type) = {
-		[ET_NONE] = "NONE (No file type)",
-		[ET_EXEC] = "EXEC (Executable file)",
-		[ET_DYN] = "DYN (Shared object file)",
-		[ET_REL] = "REL (Relocatable file)",
-		"NULL", "NULL",
+		elf_type[ET_NONE] = "NONE (No file type)",
+		elf_type[ET_EXEC] = "EXEC (Executable file)",
+		elf_type[ET_DYN] = "DYN (Shared object file)",
+		elf_type[ET_REL] = "REL (Relocatable file)",
 	};
 	type_index = header->e_type;
 	if (type_index >= 0 && type_index <= 3)
